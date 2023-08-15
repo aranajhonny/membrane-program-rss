@@ -1,0 +1,75 @@
+{
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "actions": [
+          {
+            "name": "configure",
+            "type": "Void",
+            "params": [
+              {
+                "name": "feedOptions",
+                "type": "Json"
+              },
+              {
+                "name": "feed",
+                "type": "String"
+              }
+            ]
+          },
+          {
+            "name": "addItem",
+            "type": "Void",
+            "params": [
+              {
+                "name": "feed",
+                "type": "String"
+              },
+              {
+                "name": "item",
+                "type": "Json"
+              }
+            ]
+          },
+          {
+            "name": "addCategory",
+            "type": "Void",
+            "params": [
+              {
+                "name": "feed",
+                "type": "String"
+              },
+              {
+                "name": "category",
+                "type": "String"
+              }
+            ]
+          },
+          {
+            "name": "addContributor",
+            "type": "Void",
+            "params": [
+              {
+                "name": "feed",
+                "type": "String"
+              },
+              {
+                "name": "contributor",
+                "description": "Format: name, email, link",
+                "type": "Json"
+              }
+            ]
+          }
+        ],
+        "fields": [
+          {
+            "name": "feeds",
+            "type": "List",
+            "ofType": "String"
+          }
+        ]
+      }
+    ]
+  }
+}
