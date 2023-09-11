@@ -4,11 +4,11 @@ import { Feed } from "feed";
 // Initialize an empty object to store feeds
 state.feeds = state.feeds ?? {};
 
-export async function configure({ args: { feed, feedOptions } }) {
+export async function configure({ feed, feedOptions }) {
   state.feeds[feed] = new Feed(feedOptions);
 }
 
-export async function addItem({ args: { feed, item } }) {
+export async function addItem({ feed, item }) {
   if (state.feeds[feed]) {
     // Workaround for membrane proxy bug
     item = JSON.parse(JSON.stringify(item));
@@ -17,19 +17,19 @@ export async function addItem({ args: { feed, item } }) {
   }
 }
 
-export async function addCategory({ args: { feed, category } }) {
+export async function addCategory({ feed, category }) {
   if (state.feeds[feed]) {
     state.feeds[feed].addCategory(category);
   }
 }
 
-export async function addContributor({ args: { feed, contributor } }) {
+export async function addContributor({ feed, contributor }) {
   if (state.feeds[feed]) {
     state.feeds[feed].addContributor(contributor);
   }
 }
 
-export async function endpoint({ args }) {
+export async function endpoint(args) {
   const feed: string = args.path.slice(1);
 
   switch (args.path) {
