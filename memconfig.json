@@ -64,9 +64,17 @@
         ],
         "fields": [
           {
-            "name": "feeds",
-            "type": "List",
-            "ofType": "String"
+            "name": "tests",
+            "type": "Tests"
+          }
+        ]
+      },
+      {
+        "name": "Tests",
+        "actions": [
+          {
+            "name": "testCreateRss",
+            "type": "Boolean"
           }
         ]
       }

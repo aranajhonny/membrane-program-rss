@@ -4,6 +4,27 @@ import { Feed } from "feed";
 // Initialize an empty object to store feeds
 state.feeds = state.feeds ?? {};
 
+export const Root = {
+  tests: () => ({}),
+};
+
+export const Tests = {
+  testCreateRss: async () => {
+    const feedOptions = {
+      title: "Test Feed",
+      id: "https://example.com",
+      link: "https://example.com",
+      description: "Test Feed Description",
+      image: "https://example.com/favicon.ico",
+      copyright: new Date().getFullYear(),
+    };
+
+    await root.configure({ feedOptions, feed: "test" });
+
+    return typeof state.feeds["test"].rss2() === "string";
+  },
+};
+
 export async function configure({ feed, feedOptions }) {
   state.feeds[feed] = new Feed(feedOptions);
 }
