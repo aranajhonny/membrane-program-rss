@@ -16,7 +16,8 @@
                 "name": "feed",
                 "type": "String"
               }
-            ]
+            ],
+            "description": "Configures the RSS feed with the specified options"
           },
           {
             "name": "addItem",
@@ -30,7 +31,8 @@
                 "name": "item",
                 "type": "Json"
               }
-            ]
+            ],
+            "description": "Adds a new item to the RSS feed"
           },
           {
             "name": "addCategory",
@@ -44,7 +46,8 @@
                 "name": "category",
                 "type": "String"
               }
-            ]
+            ],
+            "description": "Adds a new category to the RSS feed"
           },
           {
             "name": "addContributor",
@@ -59,24 +62,29 @@
                 "description": "Format: name, email, link",
                 "type": "Json"
               }
-            ]
+            ],
+            "description": "Adds a new contributor to the RSS feed"
           }
         ],
         "fields": [
           {
             "name": "tests",
-            "type": "Tests"
+            "type": "Tests",
+            "description": "Collection of test cases for RSS feed management"
           }
-        ]
+        ],
+        "description": "RSS Feed Management Driver"
       },
       {
         "name": "Tests",
         "actions": [
           {
             "name": "testCreateRss",
-            "type": "Boolean"
+            "type": "Boolean",
+            "description": "Action to test the creation of an RSS feed"
           }
-        ]
+        ],
+        "description": "Collection of RSS testing actions"
       }
     ]
   }
